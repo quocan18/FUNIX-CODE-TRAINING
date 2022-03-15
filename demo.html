@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="age" style="font-weight: bold"></p>
+    <button onclick=" notify()">Try it</button>
+    <script>
+      function notify() {
+        const year = new Date().getFullYear();
+        var birth_year = parseInt(prompt("Enter Your birth year:")); // This is the first prompt
+        var tuoi = year - birth_year;
+        if (!isNaN(birth_year) && birth_year < year) {
+          document.getElementById("age").innerHTML =
+            "Your " + tuoi + " is so beautiful"; // If user enter birth year < current year will display this
+        } else {
+          do {
+            birth_year = parseInt(prompt("Re-Enter Your birth year:")); // Ortherwise, this will display and they need to enter until birth year < current year
+          } while (isNaN(parseInt(birth_year)) || birth_year >= year);
+          //   var tuoi = year - birth_year; // This is just calculate user'age, for example if the user enter 2000 will display user'age is 22
+          document.getElementById("age").innerHTML =
+            "Tuổi " + tuoi + " này đẹp đó";
+        }
+      }
+    </script>
+  </body>
+</html>

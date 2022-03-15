@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project 1 - Nguyễn Quốc An</title>
+  </head>
+  <body>
+    <p>Click the button to display an alert box.</p>
+    <p id="name" style="font-weight: bold"></p>
+    <p id="city" style="font-weight: bold"></p>
+    <p id="mobile" style="font-weight: bold"></p>
+    <p id="age" style="font-weight: bold"></p>
+    <p id="email" style="font-weight: bold"></p>
+    <p id="job" style="font-weight: bold"></p>
+
+    <!--Khi người dùng bấm nút sẽ chạy đến function-->
+    <button onclick=" notify()">Try it</button>
+
+    <script>
+      function notify() {
+        // Ngay sau khi người dùng bấm "Try it" sẽ hiện ra alert này
+        alert("Chào mừng bạn đến với ứng dụng JavaScript đầu tiên");
+
+        // Hiển thị prompt để nhập tên của người dùng
+        let person = prompt("Hãy nhập tên của bạn");
+        if (person != null) {
+          // Sau khi nhập tên người dùng
+          document.getElementById("name").innerHTML =
+            "Xin chào " + person + " bạn thật tuyệt"; // Sẽ hiển thị ra câu này
+        }
+
+        // Hiển thị prompt để nhập thành phố
+        let city = prompt("Bạn sống ở thành phố");
+        if (city != null) {
+          // Sau khi nhập tên thành phố
+          document.getElementById("city").innerHTML =
+            city + " là một thành phố tuyệt vời nhỉ"; // Sẽ hiển thị ra câu này
+        }
+
+        // Hiển thị prompt để nhập số điện thoại
+        let mobile = prompt("Cho xin số điện thoại nào");
+        if (mobile != null) {
+          // Sau khi nhập số điện thoại
+          document.getElementById("mobile").innerHTML =
+            "Số " + mobile + " sẽ đem đến cho bạn nhiều may mắn đó"; // Sẽ hiển thị ra câu này
+        }
+
+        // Hiển thị prompt để nhập email
+        let email = prompt("Cho xin email nào");
+        if (email != null) {
+          // Sau khi nhập email
+          document.getElementById("email").innerHTML = email + " đẹp đấy"; // Sẽ hiển thị ra câu này
+        }
+
+        // Hiển thị prompt để nhập nghề nghiệp
+        let job = prompt("Cho xin nghề nghiệp nào");
+        if (job != null) {
+          // Sau khi nhập job
+          document.getElementById("job").innerHTML =
+            "Nghề " + job + " này thấy tốt lắm đó"; // Sẽ hiển thị ra câu này
+        }
+
+        // Hàm tính tuổi
+        return tinh_tuoi();
+
+        //Sau khi đã chạy hết các prompt sẽ hiển thị ra nút "Bước tiếp theo"
+        var x = document.getElementById("myDiv");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+
+      function tinh_tuoi() {
+        // Phần này để nhập tuổi
+        let age = document.getElementById("age").value;
+        const year = new Date().getFullYear();
+        do {
+          age = prompt("Ngày sinh của bạn"); // Tuy nhiên sẽ hiện thị lại thông báo nếu người dùng nhập sai điều kiện
+        } while (age > year && age != null); // vòng lặp sẽ hoạt động đến khi nào năm sinh nhập vào < năm hiện tại
+        var tuoi = year - age; // Sau khi kết thúc vòng lặp sẽ lấy giá trị của age để tính tuổi
+        document.getElementById("age").innerHTML =
+          "Tuổi " + tuoi + " này đẹp đó";
+      }
+    </script>
+
+    <!-- Đây chính là nút sẽ hiển thị sau khi các prompt đã được chạy hết-->
+    <div id="myDiv" style="display: none">
+      <button onclick="notify()">Bước tiếp theo</button>
+    </div>
+  </body>
+</html>

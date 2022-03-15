@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project 4 - News app</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/app.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <script src="js/new.js"></script>
+    <div class="topnav">
+      <a href="#home">My news</a>
+      <div class="search-container">
+        <button class="btn" type="submit">
+          <i class="fa fa-search"></i>
+        </button>
+        <div class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <table>
+              <tr>
+                <td>
+                  <p>Keyword:</p>
+                </td>
+                <td>
+                  <input
+                    id="keyword"
+                    type="text"
+                    placeholder="Search.."
+                    name="search"
+                  />
+                </td>
+                <td>
+                  <button id="search" type="submit">Search</button>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="content" class="col-s-12 col-12"></div>
+  </body>
+</html>

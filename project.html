@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project 2 JS - Nguyễn Quốc An</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="js/script.js"></script>
+  </head>
+  <body>
+    <h1 align="center" class="col- col-s-12 col-12">Class Marksheet</h1>
+
+    <!--Form để người dùng nhập điểm-->
+    <table align="center" class="col- col-s-3 col-3">
+      <tr>
+        <td>Họ tên:</td>
+        <td><input name="name" id="name" type="text" /></td>
+      </tr>
+
+      <tr>
+        <td>Điểm toán:</td>
+        <td>
+          <input name="math" min="0" max="10" id="math" type="number" />
+        </td>
+      </tr>
+
+      <tr>
+        <td>Điểm lý:</td>
+        <td>
+          <input name="physics" min="0" max="10" id="physics" type="number" />
+        </td>
+      </tr>
+
+      <tr>
+        <td>Điểm hóa:</td>
+        <td>
+          <input name="chemical" min="0" max="10" id="chemical" type="number" />
+        </td>
+      </tr>
+
+      <td>
+        <button type="submit" onclick="score_table()">Nhập</button>
+      </td>
+    </table>
+
+    <!--Sau khi người dùng nhập điểm và submit sẽ hiển ra bảng này cùng với 2 nút bên dưới-->
+    <div id="divTable">
+      <table
+        id="tableScore"
+        class="col- col-s-12 col-12"
+        border="5"
+        align="center"
+      >
+        <th>STT</th>
+        <th>Họ tên</th>
+        <th>Toán</th>
+        <th>Lý</th>
+        <th>Hóa</th>
+        <th>Trung Bình</th>
+      </table>
+
+      <!--Bấm nút này để hiện ra cột điểm trung bình-->
+      <button onclick="showAvg()" align="center">Tính điểm trung bình</button>
+
+      <!--Tô đậm các học sinh có điểm tb >= 8-->
+      <button onclick="showBest()" align="center">
+        Xác định học sinh giỏi
+      </button>
+    </div>
+  </body>
+</html>
